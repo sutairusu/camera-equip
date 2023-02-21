@@ -4,7 +4,7 @@ class CreateBookings < ActiveRecord::Migration[7.0]
       t.date :from
       t.date :until
       t.boolean :status
-      t.references :equipment, null: false, foreign_key: true
+      t.references :camera, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
