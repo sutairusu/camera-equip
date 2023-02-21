@@ -4,8 +4,8 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @equipment = Equipment.new
-    authorize @equipment
+    @camera = Camera.new
+    authorize @camera
   end
 
   def create
@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     end
   end
 
-  def equipment_params
+  def camera_params
     params.require(:booking).permit(:model, :brand, :description, :price, photos: [])
   end
 end

@@ -1,27 +1,27 @@
-class EquipmentsController < ApplicationController
+class CamerasController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @equipments = policy_scope(Equipment)
+    @cameras = policy_scope(Camera)
   end
 
   def show
-    @equipment = Equipment.find(params[:id])
+    @camera = Camera.find(params[:id])
     @booking = Booking.new
-    authorize @equipment
+    authorize @camera
   end
 
   def new
-    @equipment = Equipment.new
-    authorize @equipment
+    @camera = Camera.new
+    authorize @camera
   end
 
   def create
-    @equipment = Equipment.new(equipment_params)
-    @equipment.user = current_user
-    authorize @equipment
-    if @equipment.save
-      redirect_to equipment_path(@equipment)
+    @camera = Camera.new(camera_params)
+    @camera.user = current_user
+    authorize @camera
+    if @camera.save
+      redirect_to camera_path(@camera)
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class EquipmentsController < ApplicationController
 
   private
 
-  def equipment_params
-    params.require(:equipment).permit(:model, :brand, :description, :price, photos: [])
+  def camera_params
+    params.require(:camera).permit(:model, :brand, :description, :price, photos: [])
   end
 end
