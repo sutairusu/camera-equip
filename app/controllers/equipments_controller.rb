@@ -4,6 +4,7 @@ class EquipmentsController < ApplicationController
   end
 
   def show
-
+    @equipment = Equipment.find(params[:id])
+    authorize @equipment
   end
 end
