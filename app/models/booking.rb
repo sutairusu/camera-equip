@@ -1,4 +1,4 @@
 class Booking < ApplicationRecord
-  belongs_to :equipment
+  belongs_to :camera
   belongs_to :user
 end

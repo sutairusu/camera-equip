@@ -24,10 +24,8 @@ User.create(
   password: 123123
 )
 
-# A random comment
-
 20.times do
-  Equipment.create!(
+  Camera.create!(
     model: Faker::Camera.model,
     brand: Faker::Camera.brand,
     description: Faker::Lorem.sentences(number: 3),
