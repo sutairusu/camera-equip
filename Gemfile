@@ -60,7 +60,9 @@ end
 
 # Additional gems
 gem "devise"
+gem "pundit"
 gem "faker"
+
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
