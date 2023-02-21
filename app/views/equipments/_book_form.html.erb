@@ -1,4 +1,5 @@
-<%# simple_form_for @booking do |f| %>
-  <%# f.date :from %>
-  <%# f.date :until %>
-  <%# end %>
+<%= simple_form_for [@equipment, @booking] do |f| %>
+  <%= f.input :from, as: :date, start_year: Date.today.year, end_year: Date.today.year, discard_day: false, order: [:month, :day, :year] %>
+  <%= f.input :until, as: :date, start_year: Date.today.year, end_year: Date.today.year + 5, discard_day: false, order: [:month, :day, :year] %>
+  <%= f.submit class: 'btn btn-primary mt-2'  %>
+<% end %>
