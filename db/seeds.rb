@@ -1,7 +1,7 @@
 require 'faker'
 
 # User.destroy_all
-# Equipment.destroy_all
+# Camera.destroy_all
 # Booking.destroy_all
 
 # This file should contain all the record creation needed to seed the database with its default values.
@@ -42,13 +42,13 @@ Booking.create!(
   from: Date.new(2023, 2, 21),
   until: Date.new(2023, 2, 24),
   status: true,
-  equipment: Equipment.all.first,
+  camera: Camera.all.first,
   user: User.all.first
 )
 Booking.create!(
   from: Date.new(2023, 2, 21),
   until: Date.new(2023, 2, 24),
   status: true,
-  equipment: Equipment.last,
+  camera: Camera.last,
   user: User.last
 )
