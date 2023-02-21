@@ -62,6 +62,7 @@ end
 gem "devise"
 gem "pundit"
 gem "faker"
+gem "dotenv-rails", groups: [:development, :test]
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
