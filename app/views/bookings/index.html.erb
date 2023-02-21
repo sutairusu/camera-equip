@@ -1,0 +1,21 @@
+<div class="container mt-3">
+      <h1>My Bookings</h1>
+    <%# if policy(Equipment).new? %>
+      <%#= link_to new_equipment_path, class: 'text-light text-decoration-none' do %>
+        <%# <i class="fa-solid fa-plus"></i> %>
+      <%# end %>
+    <%# end %>
+  <div class="cards">
+    <% @bookings.each do |booking| %>
+    <div>
+      <%= booking.from  %>
+      <%= booking.until  %>
+      <%= booking.status  %>
+      <%= booking.equipment.model  %>
+      <%= booking.user.first_name  %>
+    </div>
+
+      <%#= render 'equipments/card', equipment: equipment %>
+    <% end %>
+  </div>
+</div>
