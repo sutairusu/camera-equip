@@ -7,6 +7,7 @@ class EquipmentsController < ApplicationController
 
   def show
     @equipment = Equipment.find(params[:id])
+    @booking = Booking.new
     authorize @equipment
   end
 
