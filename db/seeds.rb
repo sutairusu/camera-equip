@@ -24,6 +24,8 @@ User.create(
   password: 123123
 )
 
+# A random comment
+
 20.times do
   Equipment.create!(
     model: Faker::Camera.model,
