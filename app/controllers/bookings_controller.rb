@@ -9,7 +9,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-    # raise
     @booking = Booking.new(camera_params)
     @booking.user = current_user
     @booking.camera = Camera.find(params[:camera_id])
@@ -18,7 +17,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path(@booking)
     else
-      render :new, status: :unprocessable_entity
+      render partial: 'equipments/form', status: :unprocessable_entity
     end
   end
 
