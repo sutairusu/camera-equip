@@ -1,14 +1,18 @@
-<div class="container">
-  <div class="container mt-2">
-    <div class="row justify-content-around">
-      <div class="col-12 col-sm-8">
-        <div class="image-container">
-          <%= image_tag('https://www.pngkey.com/png/full/88-889285_dslr-camera-transparent-background-canon-eos-5d-mark.png', height: '380', width: '500') %>
-        </div>
-      </div>
-      <div class="col-12 col-sm-4 mt-5">
-        <div class="side-info-container">
-          <%= render 'cameras/side_info' %>
+<div class="card">
+  <div class="card-body">
+    <div class="container">
+      <div class="container mt-2">
+        <div class="row justify-content-around">
+          <div class="col-12 col-sm-6">
+            <div class="image-container w-100">
+              <%= image_tag('https://source.unsplash.com/featured?camera', height: '400', width: '500') %>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 mt-5">
+            <div class="side-info-container">
+              <%= render 'cameras/side_info' %>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -34,7 +34,7 @@ User.create(
   Camera.create!(
     model: Faker::Camera.model,
     brand: Faker::Camera.brand,
-    description: Faker::Lorem.sentences(number: 3),
+    description: Faker::Lorem.sentences(number: 10),
     price: 2000,
     user: User.all.sample
   )

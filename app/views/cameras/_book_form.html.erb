@@ -1,6 +1,12 @@
-<%# <h2>Current camera bookings</h2> %>
-<%= simple_form_for [@camera, @booking] do |f| %>
-  <%= f.input :from, as: :date, start_year: Date.today.year, end_year: Date.today.year, discard_day: false, order: [:month, :day, :year] %>
-  <%= f.input :until, as: :date, start_year: Date.today.year, end_year: Date.today.year + 5, discard_day: false, order: [:month, :day, :year] %>
-  <%= f.submit class: 'btn btn-primary mt-2'  %>
-<% end %>
+
+<div class="container">
+  <div class="row justify-content-end">
+    <div class="col-12 col-sm-6 mt-5">
+      <%= simple_form_for [@camera, @booking] do |f| %>
+        <%= f.input :from, as: :date, label: 'Reserve from', start_year: Date.today.year, end_year: Date.today.year, discard_day: false, order: [:month, :day, :year], input_html: { min: Date.today.to_s } %>
+        <%= f.input :until, as: :date, start_year: Date.today.year, end_year: Date.today.year + 5, discard_day: false, order: [:month, :day, :year] %>
+        <%= f.submit "Rent this camera", class: 'btn btn-warning mt-2 rounded-pill'  %>
+      <% end %>
+    </div>
+  </div>
+</div>

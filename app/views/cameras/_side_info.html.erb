@@ -1,3 +1,17 @@
-<h1><strong><%= Faker::Camera.brand %></strong></h1>
-<h3><strong><%= Faker::Camera.model %></strong></h3>
-<p><%= Faker::Lorem.sentences(number: 3) %></p>
+<h1><strong><%= @camera.brand %></strong></h1>
+<h3><strong><%= @camera.model %></strong></h3>
+<p>
+  <h5><%= "About the camera" %></h5>
+</p>
+<%= Faker::Lorem.sentences(number: 15) %>
+<div class="d-flex flex-row-reverse bd-highlight">
+  <div class="p-2 bd-highlight">
+    <%= "/day" %>
+  </div>
+  <div class="p-2 bd-highlight">
+    <h2><strong><%= @camera.price %></strong></h2>
+  </div>
+  <div class="p-2 bd-highlight">
+    <h2><strong><%= "¥" %></strong></h2>
+  </div>
+</div>
