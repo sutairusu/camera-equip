@@ -1,21 +1,20 @@
 <div class="container mt-3">
-      <h1>My Bookings</h1>
-    <%# if policy(Camera).new? %>
-      <%#= link_to new_camera_path, class: 'text-light text-decoration-none' do %>
-        <%# <i class="fa-solid fa-plus"></i> %>
-      <%# end %>
+  <h1>My Bookings</h1>
+  <%# if policy(Camera).new? %>
+  <%#= link_to new_camera_path, class: 'text-light text-decoration-none' do %>
+    <%# <i class="fa-solid fa-plus"></i> %>
     <%# end %>
-  <div class="cards">
-    <% @bookings.each do |booking| %>
-    <div>
-      <%= booking.from  %>
-      <%= booking.until  %>
-      <%= booking.status  %>
-      <%= booking.camera.model  %>
-      <%= booking.user.first_name  %>
+    <%# end %>
+    <div class="cards">
+      <% @bookings.each do |booking| %>
+        <div>
+          Rental from <%= booking.from  %>, until <%= booking.until %>
+          <%#= booking.status  %>
+          <%= booking.camera.brand  %>
+          <%= booking.camera.model  %>
+          <%#= booking.user.first_name  %>
+        </div>
+        <%#= render 'cameras/card', camera: camera %>
+      <% end %>
     </div>
-
-      <%#= render 'cameras/card', camera: camera %>
-    <% end %>
   </div>
-</div>
