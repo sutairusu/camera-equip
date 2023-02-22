@@ -9,10 +9,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(camera_params)
+    @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.camera = Camera.find(params[:camera_id])
-    @booking.status = false
+    # @booking.status = false
+    # We probably need to check whether the camera is actually available
+    # If not, the user needs to be informed and redirected to the form
     authorize @booking
     if @booking.save
       redirect_to bookings_path(@booking)
@@ -21,7 +23,9 @@ class BookingsController < ApplicationController
     end
   end
 
-  def camera_params
-    params.require(:booking).permit(:from, :until)
+  private
+
+  def booking_params
+    params.require(:booking).permit(:status, :from, :until)
   end
 end
