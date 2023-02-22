@@ -1,0 +1,25 @@
+.cameras-card{
+  border: 1px solid black;
+  box-shadow: 1px 1px 5px 0px grey;
+  position:relative;
+  .camera-card-img-div{
+    height: 200px;
+    img{
+      width:100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+ }
+
+ .card-camera-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.orange{
+  color: #FF6D00;
+}
