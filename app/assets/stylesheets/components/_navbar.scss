@@ -3,6 +3,11 @@
   // background: white;
   padding-left: 16px;
   padding-right: 16px;
+  z-index:100;
+  &.active{
+    background-color: white;
+    color: #FF6D00;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,10 +20,7 @@
 
 
 .navbar-lewagon .navbar-collapse .navbar-nav li a{
-  color: white;
-  &.active{
-
-  }
+  color: black;
 }
 
 .camera-navbar{
