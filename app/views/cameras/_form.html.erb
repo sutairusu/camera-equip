@@ -1,7 +1,9 @@
-<%= simple_form_for @camera do |f| %>
-  <%= f.input :model %>
-  <%= f.input :brand %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.submit class: 'btn btn-primary mt-2' %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @camera do |f| %>
+    <%= f.input :model %>
+    <%= f.input :brand %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.submit class: 'btn btn-warning mt-2 rounded-pill' %>
+  <% end %>
+</div>
