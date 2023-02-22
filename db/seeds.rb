@@ -1,9 +1,9 @@
 require 'faker'
 
 puts "Cleaning database..."
-User.destroy_all
-Camera.destroy_all
 Booking.destroy_all
+Camera.destroy_all
+User.destroy_all
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -14,7 +14,7 @@ Booking.destroy_all
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Creating users, cameras and bookings..."
-User.create(
+User.create!(
   first_name: "John",
   last_name: "Baker",
   email: "john.baker@gmail.com",
@@ -22,7 +22,7 @@ User.create(
   password: 123123
 )
 
-User.create(
+User.create!(
   first_name: "Keina",
   last_name: "Morikawa",
   email: "keina.morikawa@me.com",
