@@ -19,7 +19,17 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path(@booking)
     else
-      render partial: 'equipments/form', status: :unprocessable_entity
+      render partial: 'cameras/form', status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    if @booking.update(booking_params)
+      redirect_to lender_bookings_path(@booking)
+    else
+      render partial: 'lender/bookings/buttonsform', status: :unprocessable_entity
     end
   end
 
