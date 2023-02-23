@@ -1,0 +1,7 @@
+<% if booking.status == "pending" %>
+  <h3 class="text-warning"><strong><%= booking.status %></strong></h3>
+<% elsif booking.status == "accepted" %>
+  <h3 class="text-success"><strong><%= booking.status %></strong></h3>
+<% else booking.status == "rejected" %>
+  <h3 class="text-danger"><strong><%= booking.status %></strong></h3>
+<% end %>
