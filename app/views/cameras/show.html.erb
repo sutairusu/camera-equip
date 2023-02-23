@@ -5,11 +5,12 @@
         <div class="row justify-content-around">
           <div class="col-12 col-sm-6">
             <div class="image-container">
-              <%= image_tag('https://source.unsplash.com/featured?camera', class:"small-images") %>
+              <%= cl_image_tag @camera.photos.first.key, class:"small-images" %>
               <div class="d-flex">
-                <div class="col-4 p-1"><%= image_tag("https://source.unsplash.com/featured?camera&#{rand(1000)}", class:"small-images") %></div>
-                <div class="col-4 p-1"><%= image_tag("https://source.unsplash.com/featured?camera&#{rand(1000)}", class:"small-images") %></div>
-                <div class="col-4 p-1"><%= image_tag("https://source.unsplash.com/featured?camera&#{rand(1000)}", class:"small-images") %></div>
+                <% @camera.photos.each do |photo| %>
+                  <% next if @camera.photos.first == photo %>
+                  <div class="col-4 p-1"><%= cl_image_tag photo.key, class:"small-images" %></div>
+                <% end %>
               </div>
             </div>
           </div>
