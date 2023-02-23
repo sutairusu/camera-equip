@@ -88,11 +88,10 @@ camera_images = [
 
 cameras.each_with_index do |camera, index|
   c = Camera.new(camera)
-  camera_images[index].each do |id|
-    preloaded = Cloudinary::PreloadedFile.new(id)
-    raise "Invalid upload signature" unless preloaded.valid?
-
-    c.images.attach(io: StringIO.new(preloaded.to_s), filename: id.split("/").last)
+  file_paths = camera_images[index]
+  file_paths.each do |file_path|
+    file = File.open(file_path)
+    c.images.attach(io: file, filename: "#{c.model}.jpeg")
   end
   c.save!
 end
