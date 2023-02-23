@@ -1,11 +1,11 @@
-<div class="container mt-3">
+<div class="container margintop">
   <h2 class="text-center mb-3 orange">My Reservations</h2>
   <div class="row">
     <% @bookings.each do |booking| %>
       <div class="d-flex justify-content-center col-12 my-2">
         <div class="card-product rounded-4" style="width: 800px;">
           <div class="camera-card-img-div">
-            <%= image_tag "https://source.unsplash.com/featured?camera&#{rand(1000)}" %>
+            <%= cl_image_tag booking.camera.photos.first.key ,class: "reserve-card"%>
           </div>
           <div class="card-product-infos">
             <strong>
