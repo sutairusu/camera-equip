@@ -1,0 +1,21 @@
+<div class="container mt-3">
+  <h2 class="text-center mb-3 orange">My Reservations(Lender's Side)</h2>
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <div class="col-6 mb-3">
+        <div class="card-product">
+          <div class="camera-card-img-div">
+            <%= image_tag "https://source.unsplash.com/featured?camera&#{rand(1000)}" %>
+          </div>
+          <div class="card-product-infos">
+            <p>Camera: <%= booking.camera.brand  %> <%= booking.camera.model  %></p>
+            <p>Rented from <%= booking.camera.user.first_name %></p>
+            <p>Reserved from <%= booking.from  %> until <%= booking.until %></p>
+            <% total_days = (booking.until - booking.from).to_i %>
+            <p>Total price: ¥<%= booking.camera.price * total_days %> for <%= total_days %> days</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
