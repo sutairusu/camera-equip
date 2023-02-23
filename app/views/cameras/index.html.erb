@@ -52,6 +52,7 @@
       <div class="col-4 mb-3">
         <div class="cameras-card rounded-4 border-0">
           <div class="camera-card-img-div">
+            <%= cl_image_tag camera.photos.first.key %>
             <%= image_tag "https://source.unsplash.com/featured?cameras&#{rand(1000)}", class: "rounded-4" %>
           </div>
           <div class="camera-card-content p-3">
