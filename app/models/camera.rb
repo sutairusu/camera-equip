@@ -9,4 +9,5 @@ class Camera < ApplicationRecord
   def only_4_pictures
     errors.add(:photos, "should be less than 4") if photos.length > 4
   end
+
 end
