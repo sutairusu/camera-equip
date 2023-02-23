@@ -1,9 +1,11 @@
 <h1><strong><%= @camera.brand %></strong></h1>
 <h3><strong><%= @camera.model %></strong></h3>
 <p>
-  <h5><%= "About the camera" %></h5>
+  <strong>
+    <h5>About the camera</h5>
+  </strong>
 </p>
-<%= Faker::Lorem.sentences(number: 15) %>
+<%= @camera.description %>
 <div class="d-flex flex-row-reverse bd-highlight">
   <div class="p-2 bd-highlight text-warning">
     <%= "/day" %>
