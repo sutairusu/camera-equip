@@ -107,7 +107,6 @@ Booking.create!(
 Booking.create!(
   from: Date.new(2023, 2, 21),
   until: Date.new(2023, 2, 24),
-  status: true,
   camera: Camera.last,
   user: User.last
 )

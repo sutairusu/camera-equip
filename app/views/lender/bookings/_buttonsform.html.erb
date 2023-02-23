@@ -1,0 +1,16 @@
+<div class="d-flex flex-column">
+  <% if booking.pending? %>
+    <div class="p-2 bd-highlight"><%= simple_form_for booking do |f| %>
+        <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+        <%= f.submit 'Accept', class: 'btn btn-warning rounded-4' %>
+      <% end %>
+    </div>
+    <div class="p-2 bd-highlight"><%= simple_form_for booking do |f| %>
+        <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+        <%= f.submit 'Reject', class: 'btn btn-light rounded-4' %>
+      <% end %>
+    </div>
+  <% else %>
+    <p class='booking-tag'><%= booking.status %></p>
+  <% end %>
+</div>
