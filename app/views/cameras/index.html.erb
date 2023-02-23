@@ -12,40 +12,40 @@
         <%= image_tag "banner2.jpg",class:"d-block w-100 carousel-img" %>
       </div>
       <div class="carousel-item">
-      <div class="carousel-item active position-relative">
-        <div class="position-absolute top-50 start-0 ps-5">
-          <strong>
-            <h1 class="text-warning">Equipped</h1>
-          </strong>
-          <h3 class="text-white">Have a camera ready for that special moment</h3>
-        </div>
-        <%# <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="d-block w-100" alt="Wild Landscape" /> %>
-        <%= image_tag "banner1.jpg",class:"d-block w-100 carousel-img" %>
-      </div>
-      <div class="carousel-item position-relative">
-        <div class="position-absolute top-50 start-0 text-warning ps-5">
-          <strong>
-            <h1 class="text-warning">Equipped</h1>
-          </strong>
-          <h3 class="text-white">Have a camera ready for that special moment</h3>
-        </div>
-        <%# <img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp" class="d-block w-100" alt="Camera" /> %>
-        <%= image_tag "banner2.jpg",class:"d-block w-100 carousel-img" %>
-      </div>
-      <div class="carousel-item position-relative">
-        <div class="position-absolute top-50 start-0 text-warning ps-5">
-          <strong>
-            <h1 class="text-warning">Equipped
-            </h1>
+        <div class="carousel-item active position-relative">
+          <div class="position-absolute top-50 start-0 ps-5">
+            <strong>
+              <h1 class="text-warning">Equipped</h1>
+            </strong>
             <h3 class="text-white">Have a camera ready for that special moment</h3>
-          </strong>
+          </div>
+          <%# <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="d-block w-100" alt="Wild Landscape" /> %>
+          <%= image_tag "banner1.jpg",class:"d-block w-100 carousel-img" %>
         </div>
-        <%# <img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" class="d-block w-100" alt="Exotic Fruits" /> %>
-        <%= image_tag "banner3.jpg",class:"d-block w-100 carousel-img" %>
+        <div class="carousel-item position-relative">
+          <div class="position-absolute top-50 start-0 text-warning ps-5">
+            <strong>
+              <h1 class="text-warning">Equipped</h1>
+            </strong>
+            <h3 class="text-white">Have a camera ready for that special moment</h3>
+          </div>
+          <%# <img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp" class="d-block w-100" alt="Camera" /> %>
+          <%= image_tag "banner2.jpg",class:"d-block w-100 carousel-img" %>
+        </div>
+        <div class="carousel-item position-relative">
+          <div class="position-absolute top-50 start-0 text-warning ps-5">
+            <strong>
+              <h1 class="text-warning">Equipped
+              </h1>
+              <h3 class="text-white">Have a camera ready for that special moment</h3>
+            </strong>
+          </div>
+          <%# <img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" class="d-block w-100" alt="Exotic Fruits" /> %>
+          <%= image_tag "banner3.jpg",class:"d-block w-100 carousel-img" %>
+        </div>
       </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <%# <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <%# <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev"> %>
+      <%# <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
@@ -54,27 +54,26 @@
       <span class="visually-hidden">Next</span>
     </button>
     </button> %>
+    </div>
   </div>
-</div>
-<div class="container mt-3">
-  <h2 class="text-center mb-3 orange">List Of Available Cameras</h2>
-  <div class="row">
-  <%# <h2>mandil</h2> %>
-    <% @cameras.each do |camera| %>
-      <div class="col-4 mb-3">
-        <div class="cameras-card rounded-4 border-0">
-          <div class="camera-card-img-div">
-            <%= cl_image_tag camera.photos.first.key %>
-            <%= image_tag "https://source.unsplash.com/featured?cameras&#{rand(1000)}", class: "rounded-4" %>
+  <div class="container mt-3">
+    <h2 class="text-center mb-3 orange">List Of Available Cameras</h2>
+    <div class="row">
+      <%# <h2>mandil</h2> %>
+      <% @cameras.each do |camera| %>
+        <div class="col-4 mb-3">
+          <div class="cameras-card rounded-4 border-0">
+            <div class="camera-card-img-div">
+              <%= cl_image_tag camera.photos.first.key, class: "rounded-4" %>
+            </div>
+            <div class="camera-card-content p-3">
+              <h3 class="text-center orange"> <strong><%= camera.brand %> </strong></h3>
+              <p class="text-center fw-light fs-5"> <%= camera.model %></p>
+              <p class="price-content text-center text-warning">	&#165; <span class="price"><strong><%= camera.price %></strong></span>/day</p>
+            </div>
+            <%= link_to '',camera_path(camera['id']), class: 'card-camera-link' %>
           </div>
-          <div class="camera-card-content p-3">
-            <h3 class="text-center orange"> <strong><%= camera.brand %> </strong></h3>
-            <p class="text-center fw-light fs-5"> <%= camera.model %></p>
-            <p class="price-content text-center text-warning">	&#165; <span class="price"><strong><%= camera.price %></strong></span>/day</p>
-          </div>
-          <%= link_to '',camera_path(camera['id']), class: 'card-camera-link' %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
