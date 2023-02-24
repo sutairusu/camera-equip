@@ -1,6 +1,7 @@
 <div class="container margintop">
   <h2 class="text-center mb-3 orange">Cameras I Rented</h2>
   <div class="row">
+  <% unless @bookings.empty? %>
     <% @bookings.each do |booking| %>
       <div class="d-flex justify-content-center col-12 my-2">
         <div class="d-flex card-product rounded-4" style="width: 800px;">
@@ -26,5 +27,8 @@
         </div>
       </div>
     <% end %>
+  <% else %>
+
+  <% end %>
   </div>
 </div>
