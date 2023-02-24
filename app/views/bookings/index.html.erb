@@ -10,15 +10,19 @@
           <div class="card-product-infos">
             <strong>
               <h2 class="text-warning"><%= booking.camera.brand  %> </h2>
-              <strong>
-                <p><%= booking.camera.model  %></p>
-                <p>Rented from <%= booking.camera.user.first_name %></p>
-                <p>Reserved from <%= booking.from  %> until <%= booking.until %></p>
-                <% total_days = (booking.until - booking.from).to_i %>
-                <p>Total price: ¥<%= booking.camera.price * total_days %> for <%= total_days %> days</p>
-              </div>
+              <%= booking.camera.model  %>
+              <p>Rented from <%= booking.camera.user.first_name %></p>
+              <p><i class="fa-solid fa-calendar-days text-warning"></i> <%= booking.from  %> - <%= booking.until %></p>
+              <% total_days = (booking.until - booking.from).to_i %>
+              <p> <i class="fa-solid fa-yen-sign text-warning"></i> <%= booking.camera.price * total_days %> for <%= total_days %> days</p>
             </div>
           </div>
-        <% end %>
-      </div>
+          <div class="card-status me-5">
+            <p>STATUS</p>
+            <%= render "bookings/status", booking: booking %>
+          </div>
+        </div>
+      <% end %>
     </div>
+  </div>
+</div>
