@@ -2,9 +2,9 @@
   <div class="row justify-content-end">
     <div class="col-12 col-sm-6 mt-5">
       <%= simple_form_for [@camera, @booking], data: { controller: "display-num-days" } do |f| %>
-        <%= f.input :from, as: :date, html5: true, label: 'Reserve from', start_year: Date.today.year, end_year: Date.today.year, discard_day: false, order: [:month, :day, :year], input_html: { min: Date.today.to_s }, input_html: { data: { action: "change->display-num-days#calculate", display_num_days_target: "from" }  } %>
-        <%= f.input :until, as: :date, html5: true, start_year: Date.today.year, end_year: Date.today.year, discard_day: false, order: [:month, :day, :year], input_html: { min: Date.today.to_s }, input_html: { data: { action: "change->display-num-days#calculate", display_num_days_target: "until" } } %>
-        <p>Number of days: <span data-display-num-days-target="total">0</span></p>
+        <%= f.input :from, as: :date, html5: true, label: 'Reserve from', start_year: Date.today.year, end_year: Date.today.year, discard_day: false, order: [:month, :day, :year], input_html: { data: { action: "change->display-num-days#calculate", display_num_days_target: "from" }, min: Date.today.to_s  } %>
+        <%= f.input :until, as: :date, html5: true, start_year: Date.today.year, end_year: Date.today.year, discard_day: false, order: [:month, :day, :year], input_html: { data: { action: "change->display-num-days#calculate", display_num_days_target: "until" }, min: Date.today.to_s } %>
+        <%= render 'cameras/total' %>
         <%= f.submit "Rent this camera", class: 'btn btn-warning mt-2 rounded-pill'  %>
       <% end %>
     </div>
