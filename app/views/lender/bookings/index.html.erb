@@ -15,7 +15,8 @@
             <p>Total price: ¥<%= booking.camera.price * total_days %> for <%= total_days %> days</p>
           </div>
         </div>
-        <div class="no-gutters"><%= render 'lender/bookings/buttonsform', booking: booking %>
+        <div class="no-gutters d-flex align-items-center">
+          <%= render 'lender/bookings/buttonsform', booking: booking %>
         </div>
       </div>
     <% end %>
