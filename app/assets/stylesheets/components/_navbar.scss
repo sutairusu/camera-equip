@@ -20,6 +20,18 @@
   color: black;
 }
 
+.navbar-lewagon .navbar-nav{
+  align-items: center;
+  p{
+    margin:0;
+  }
+  .burger-icon{
+    font-size: 24px;
+    &::after{
+      content: none;
+    }
+  }
+}
 // .camera-navbar{
 //   // background-color: red;
 //   position: fixed;
