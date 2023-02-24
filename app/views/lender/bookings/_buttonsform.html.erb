@@ -1,5 +1,5 @@
   <% if booking.pending? %>
-<div class="d-flex flex-column">
+  <div class="d-flex flex-column">
     <div class="bd-highlight"><%= simple_form_for booking do |f| %>
         <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
         <%= f.submit 'Accept', class: 'btn btn-success rounded-4 text-white' %>
@@ -11,12 +11,12 @@
       <% end %>
     </div>
   </div>
-  <% else %>
+<% else %>
   <div class="d-flex">
     <% if booking.status === 'rejected' %>
       <div class='booking-tag text-danger'>
-      <%= booking.status %>
-    </div>
+        <%= booking.status %>
+      </div>
     <% elsif booking.status === 'pending'  %>
       <div class='booking-tag text-warning'>
         <%= booking.status %>
@@ -26,6 +26,5 @@
         <%= booking.status %>
       </div>
     <% end %>
-
   </div>
-  <% end %>
+<% end %>
