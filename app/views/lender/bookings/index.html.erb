@@ -7,18 +7,21 @@
           <div class="camera-card-img-div">
             <%= cl_image_tag booking.camera.photos.first.key ,class: "reserve-card" %>
           </div>
-          <div class="card-product-infos">
-            <p>Camera: <%= booking.camera.brand  %> <%= booking.camera.model  %></p>
-            <p>Requested by <%= booking.user.first_name %></p>
-            <p>Reserved from <%= booking.from  %> until <%= booking.until %></p>
-            <% total_days = (booking.until - booking.from).to_i %>
-            <p>Total price: ¥<%= booking.camera.price * total_days %> for <%= total_days %> days</p>
+          <div class="d-flex justify-content-between w-100">
+            <div class="card-product-infos">
+              <h2 class="text-warning"><%= booking.camera.brand  %> </h2>
+              <%= booking.camera.model  %>
+              <p>Requested by <%= booking.user.first_name %></p>
+              <p><i class="fa-solid fa-calendar-days text-warning"></i> <%= booking.from  %> - <%= booking.until %></p>
+              <% total_days = (booking.until - booking.from).to_i %>
+              <p> <i class="fa-solid fa-yen-sign text-warning"></i> <%= booking.camera.price * total_days %> for <%= total_days %> days</p>
+            </div>
+            <div class="d-flex align-items-center pe-3">
+              <%= render 'lender/bookings/buttonsform', booking: booking %>
+            </div>
           </div>
         </div>
-        <div class="no-gutters d-flex align-items-center">
-          <%= render 'lender/bookings/buttonsform', booking: booking %>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
