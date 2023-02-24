@@ -1,14 +1,14 @@
 <div class="container margintop">
-  <h2 class="text-center mb-3 orange">My Reservations</h2>
+  <h2 class="text-center mb-3 orange">Cameras I Rented</h2>
   <div class="row">
     <% @bookings.each do |booking| %>
       <div class="d-flex justify-content-center col-12 my-2">
-        <div class="card-product rounded-4" style="width: 800px;">
+        <div class="d-flex card-product rounded-4" style="width: 800px;">
           <div class="camera-card-img-div">
             <%= cl_image_tag booking.camera.photos.first.key ,class: "reserve-card"%>
           </div>
-          <div class="card-product-infos">
-            <strong>
+          <div class="d-flex justify-content-between w-100">
+            <div class="card-product-infos">
               <h2 class="text-warning"><%= booking.camera.brand  %> </h2>
               <%= booking.camera.model  %>
               <p>Rented from <%= booking.camera.user.first_name %></p>
@@ -16,13 +16,15 @@
               <% total_days = (booking.until - booking.from).to_i %>
               <p> <i class="fa-solid fa-yen-sign text-warning"></i> <%= booking.camera.price * total_days %> for <%= total_days %> days</p>
             </div>
-          </div>
-          <div class="card-status me-5">
-            <p>STATUS</p>
-            <%= render "bookings/status", booking: booking %>
+            <div class="d-flex align-items-center pe-3">
+              <div>
+                <p>STATUS</p>
+                <p><%= render "bookings/status", booking: booking %></p>
+              </div>
+            </div>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>

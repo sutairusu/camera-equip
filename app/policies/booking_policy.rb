@@ -26,7 +26,6 @@ class BookingPolicy < ApplicationPolicy
   private
 
   def user_is_owner?
-    user == record.user
+    user == record.camera.user
   end
-
 end
