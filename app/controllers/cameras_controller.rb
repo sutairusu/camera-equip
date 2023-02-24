@@ -21,7 +21,7 @@ class CamerasController < ApplicationController
     @camera.user = current_user
     authorize @camera
     if @camera.save
-      redirect_to camera_path(@camera)
+      redirect_to cameras_path(@camera)
     else
       render :new, status: :unprocessable_entity
     end
