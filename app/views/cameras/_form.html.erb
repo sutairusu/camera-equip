@@ -2,15 +2,13 @@
   <div class="row justify-content-center">
     <div class="col-6">
       <%= simple_form_for @camera do |f| %>
-      <%= f.input :model %>
-      <%= f.input :brand %>
-      <%= f.input :description %>
-      <%= f.input :price %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit 'Confirm', class: 'btn btn-warning mt-3 rounded-pill' %>
-    <% end %>
+        <%= f.input :brand %>
+        <%= f.input :model %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit 'Confirm', class: 'btn btn-warning mt-3 rounded-pill' %>
+      <% end %>
     </div>
-
   </div>
-
 </div>
