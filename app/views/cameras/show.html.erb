@@ -14,14 +14,18 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-sm-6 mt-5">
-            <div class="side-info-container">
-              <%= render 'cameras/side_info' %>
+
+            <div class="col-12 col-sm-6 mt-5">
+              <div class="side-info-container">
+                <%= render 'cameras/side_info' %>
+              </div>
             </div>
-          </div>
+
         </div>
       </div>
     </div>
   </div>
 </div>
-<%= render 'cameras/book_form' %>
+<% if @camera.user != current_user %>
+  <%= render 'cameras/book_form' %>
+<% end %>
