@@ -1,4 +1,7 @@
-<h1><strong><%= @camera.brand %></strong></h1>
+<div class="d-flex justify-content-between">
+  <h1><strong><%= @camera.brand %></strong></h1>
+  <p class="d-flex align-items-end">Rent this camera from <%= @camera.user.first_name %></p>
+</div>
 <h3><strong><%= @camera.model %></strong></h3>
 <p>
   <strong>
